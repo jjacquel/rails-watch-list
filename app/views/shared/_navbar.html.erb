@@ -6,20 +6,42 @@
  -->
 
 
-<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
-  <a class="navbar-brand" href="#">
-    <%= link_to image_tag("popcorn.png", alt: "Movies List", width: 40), root_path %>
-  </a>
+<nav class=" navbar-lewagon navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <%= link_to root_path do %>
+    <%= image_tag("popcorn.png", alt: "Movies List") %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class ="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
     <div class="navbar-nav ml-auto">
-      <button type="button" class="btn btn-outline-info my-2 my-sm-0 mr-2"><%= link_to "My lists", root_path %></button>
-      <button type="button" class="btn btn-outline-info my-2 my-sm-0 mr-2"><%= link_to "New list", new_list_path %></button>
+      <%= link_to "My lists", root_path, class: "btn btn-outline-info my-2 my-sm-0 mr-2" %>
+      <button type="button" class="btn btn-outline-info my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#newListModal">New list</button>
     </div>
   </div>
 </nav>
 
 
 
+
+
+
+<div class="modal fade" id="newListModal" tabindex="-1" aria-labelledby="newListModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="newListModalLabel">Add a new List</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <%= simple_form_for List.new do |f| %>
+            <%= f.input :name %>
+            <%= f.submit "Add List", class:"btn btn-primary" %>
+          <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
