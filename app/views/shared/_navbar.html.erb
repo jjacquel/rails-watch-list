@@ -1,0 +1,25 @@
+<!-- <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+  </a>
+</nav>
+ -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <a class="navbar-brand" href="#">
+    <%= link_to image_tag("popcorn.png", alt: "Movies List", width: 40), root_path %>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class ="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+    <div class="navbar-nav ml-auto">
+      <button type="button" class="btn btn-outline-info my-2 my-sm-0 mr-2"><%= link_to "My lists", root_path %></button>
+      <button type="button" class="btn btn-outline-info my-2 my-sm-0 mr-2"><%= link_to "New list", new_list_path %></button>
+    </div>
+  </div>
+</nav>
+
+
+
